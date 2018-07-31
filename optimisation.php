@@ -35,14 +35,9 @@ function disable_wp_emojicons() {
   }
     add_action( 'wp_footer', 'my_deregister_scripts' );
     
-    add_action('init', 'remove_content_editor');
-    function remove_content_editor() {
-            remove_post_type_support( 'page', 'editor' );
-            remove_post_type_support( 'page', 'thumbnail' );
-    }
-    // Stop Contact Form 7 Loading on anypage 
-    add_filter( 'wpcf7_load_js', '__return_false' );
-    add_filter( 'wpcf7_load_css', '__return_false' );
+
+    
+
 //remove js-migrate
     add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );
 function dequeue_jquery_migrate( &$scripts){
